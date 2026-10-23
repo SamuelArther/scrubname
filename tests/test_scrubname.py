@@ -31,7 +31,7 @@ class RenameTests(unittest.TestCase):
     def touch(self, name, text=""):
         path = self.dir / name
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(text, newline="")
+        path.write_bytes(text.encode())
         return path
 
     def names(self):
