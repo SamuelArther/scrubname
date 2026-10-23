@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scrubname"
+dynamic = ["version"]
+description = "Strip region and revision tags like (USA) (Rev 1) [!] from ROM filenames."
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Samuel Arther" }]
+requires-python = ">=3.9"
+keywords = ["rom", "rename", "no-intro", "redump", "emulation", "cli"]
+classifiers = [
+    "Environment :: Console",
+    "Programming Language :: Python :: 3",
+    "Topic :: Games/Entertainment",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/SamuelArther/scrubname"
+
+[project.scripts]
+scrubname = "scrubname:main"
+
+[tool.setuptools]
+py-modules = ["scrubname"]
+
+[tool.setuptools.dynamic]
+version = { attr = "scrubname.__version__" }
